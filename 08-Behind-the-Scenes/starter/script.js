@@ -13,5 +13,4 @@ function calcage(birthyear){
 }
 
 const name='jonas';
-calcage(2006);
-
+calcage(2004);
