@@ -44,17 +44,18 @@ const restaurant = {
       close: 24,
     },
   },
+
+  orderpasta:function(ing1,ing2,ing3){
+    console.log(`Here is your delecious pasta with ${ing1}, 
+      ${ing2} and ${ing3}`);
+  }
 };
 
+// const{name,openingHours,categories}=restaurant;
+// console.log(name,openingHours,categories);
 
-const{name,openingHours,categories}=restaurant;
-console.log(name,openingHours,categories);
-
-const{name:restaurantName,openingHours:hours,categories:tags}=restaurant;
-console.log(restaurantName,hours,tags);
-
-
-
+// const{name:restaurantName,openingHours:hours,categories:tags}=restaurant;
+// console.log(restaurantName,hours,tags);
 
 // const arr=[2,3,4];
 // const a=arr[0];
@@ -71,3 +72,62 @@ console.log(restaurantName,hours,tags);
 // const nested=[2,3,[5,6]];
 // const[i, ,[j,k]]=nested;
 // console.log(i,j,k);
+
+// mutating variables
+let a = 999;
+let b = 111;
+const obj = { a: 12, b: 34, c: 23 };
+({ a, b } = obj);
+console.log(a, b);
+
+
+// //nested obj
+// const {
+//    sat: {open:o , close:c},
+//     } = openingHours;
+// console.log(o,c);
+
+
+// restaurant.orderDelivery({
+//   time:'23:30',
+//   address:'sirsi',
+//   mainindex:'3',
+//   starterindex:'3',
+// });
+
+const arr=[5,6,7];
+const badNewArr=[1,2,arr[0],arr[1],arr[2]];
+console.log(badNewArr );
+
+const newArr=[1,2,...arr];  //...arr isused to print next element
+console.log(newArr);
+
+const newmenu=[...restaurant.mainMenu,'Dosa'];
+console.log(newmenu);
+
+//copy arr
+const mainAraymenu=[...restaurant.mainMenu];
+
+//join to array
+const menu=[...restaurant.starterMenu,...restaurant.mainMenu];
+console.log(menu);
+
+//iterables:arrays , string ,maps,sets .not object
+
+const str='pavan';
+const letters=[...str,'','s.'];
+console.log(letters);
+console.log(...str);
+
+//real world ex
+const incrediant=[
+  prompt("let's make a pasta ,incrediant 1"),
+  prompt("incrediant 2"),
+  prompt("incrediant 3"),
+];
+console.log(incrediant);
+
+restaurant.orderpasta(incrediant[0],incrediant[1],incrediant[2]);
+
+restaurant.orderpasta(...incrediant);
+
