@@ -139,63 +139,144 @@ const restaurant = {
 
 // restaurant.orderpasta(...incrediant);
 
- //spread,because on right side of=
- const arr=[1,2,...[3,4]];
+//  //spread,because on right side of=
+//  const arr=[1,2,...[3,4]];
 
- //rest,because on left side
- const[a,b,...others]=[1,2,3,4,5];
-console.log(a,b,others);
+//  //rest,because on left side
+//  const[a,b,...others]=[1,2,3,4,5];
+// console.log(a,b,others);
 
-const [pizza,risotto,...otherFood]=[...restaurant.mainMenu,...restaurant.starterMenu];
-console.log(pizza,risotto,otherFood);
+// const [pizza,risotto,...otherFood]=[...restaurant.mainMenu,...restaurant.starterMenu];
+// console.log(pizza,risotto,otherFood);
 
 
-const{sat,...weekdays}=restaurant.openingHours;
-console.log(weekdays);
+// const{sat,...weekdays}=restaurant.openingHours;
+// console.log(weekdays);
   
-//function
-const add=function(... number){
-  let sum=0;
-  for(let i=0;i<number.length;i++) sum+=number[i];
-  console.log(sum);
+// //function
+// const add=function(... number){
+//   let sum=0;
+//   for(let i=0;i<number.length;i++) sum+=number[i];
+//   console.log(sum);
   
+// }
+// add(2,3)
+// add(3,4,6,7);
+// add(8,4,3,6,7,5,4,3,2); 
+
+// const x=[3,67,4];
+// add(...x); 
+
+// restaurant.orderpizza('Mushrom','spanish','olive','ginger'); 
+
+// //use any data type ,return any data type,short-circuting
+
+// console.log(3 ||'jonas');
+// console.log('' || 'jonas');
+// console.log(true || 0);
+// console.log(undefined || 0|| ''||'jonas' || 23 || 'hello');
+
+
+// restaurant.numguest=23;
+// const guest1=restaurant.numguest?restaurant.numguest:10;
+// console.log(guest1);
+
+// const guest2=restaurant.numguest || 10;
+// console.log(guest2);
+
+
+// console.log('---AND---');
+
+// console.log(0 && 'jonas');
+// console.log(7 && 'jonus');
+// console.log('jonus' && 3 );
+
+
+
+// const guest1={
+//   name:'lukas',
+//   numguest:34
+// }
+
+// const guest2={
+//   name:'pra',
+//   owner:'pavan'
+// }
+
+// guest1.numguest=guest1.numguest||10;
+// guest2.numguest=guest2.numguest||10;
+
+// console.log(guest1,guest2);
+
+
+
+//coding challange 1
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const[players1,players2]=game.players;
+console.log(players1,players2);
+
+const[gk,...fieldplayers]=players1;
+console.log(gk,fieldplayers);
+
+const allplyers=[...players1,...players2]
+console.log(allplyers);
+
+const players1Final=[...players1,'Thiago', 'Coutinho','Perisic'];
+console.log(players1Final);
+
+const {
+odds:{team1,x:pa,team2},
+}=game;
+console.log(team1,pa,team2);
+
+const printgoal=function(...players){
+  console.log(players);
+  console.log(`${players.length} goal have been scored`);
 }
-add(2,3)
-add(3,4,6,7);
-add(8,4,3,6,7,5,4,3,2); 
 
-const x=[3,67,4];
-add(...x); 
+printgoal( 'Davies', 'Muller', 'Lewandowski','Kimmich');
+printgoal('Davies','Muller'); 
+printgoal(...game.scored);
 
-restaurant.orderpizza('Mushrom','spanish','olive','ginger'); 
-
-//use any data type ,return any data type,short-circuting
-
-console.log(3 ||'jonas');
-console.log('' || 'jonas');
-console.log(true || 0);
-console.log(undefined || 0|| ''||'jonas' || 23 || 'hello');
-
-
-restaurant.numguest=23;
-const guest1=restaurant.numguest?restaurant.numguest:10;
-console.log(guest1);
-
-const guest2=restaurant.numguest || 10;
-console.log(guest2);
-
-
-console.log('---AND---');
-
-console.log(0 && 'jonas');
-console.log(7 && 'jonus');
-console.log('jonus' && 3 );
-
-
-
-
-
-
-
-
-
+team1<team2 && console.log('team 1 is more likely to win');
