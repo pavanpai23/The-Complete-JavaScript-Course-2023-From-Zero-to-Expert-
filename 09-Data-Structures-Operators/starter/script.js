@@ -212,71 +212,76 @@ const restaurant = {
 
 //coding challange 1
 
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-    [
-      'Neuer',
-      'Pavard',
-      'Martinez',
-      'Alaba',
-      'Davies',
-      'Kimmich',
-      'Goretzka',
-      'Coman',
-      'Muller',
-      'Gnarby',
-      'Lewandowski',
-    ],
-    [
-      'Burki',
-      'Schulz',
-      'Hummels',
-      'Akanji',
-      'Hakimi',
-      'Weigl',
-      'Witsel',
-      'Hazard',
-      'Brandt',
-      'Sancho',
-      'Gotze',
-    ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
+// const game = {
+//   team1: 'Bayern Munich',
+//   team2: 'Borrussia Dortmund',
+//   players: [
+//     [
+//       'Neuer',
+//       'Pavard',
+//       'Martinez',
+//       'Alaba',
+//       'Davies',
+//       'Kimmich',
+//       'Goretzka',
+//       'Coman',
+//       'Muller',
+//       'Gnarby',
+//       'Lewandowski',
+//     ],
+//     [
+//       'Burki',
+//       'Schulz',
+//       'Hummels',
+//       'Akanji',
+//       'Hakimi',
+//       'Weigl',
+//       'Witsel',
+//       'Hazard',
+//       'Brandt',
+//       'Sancho',
+//       'Gotze',
+//     ],
+//   ],
+//   score: '4:0',
+//   scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+//   date: 'Nov 9th, 2037',
+//   odds: {
+//     team1: 1.33,
+//     x: 3.25,
+//     team2: 6.5,
+//   },
+// };
 
-const[players1,players2]=game.players;
-console.log(players1,players2);
+// const[players1,players2]=game.players;
+// console.log(players1,players2);
 
-const[gk,...fieldplayers]=players1;
-console.log(gk,fieldplayers);
+// const[gk,...fieldplayers]=players1;
+// console.log(gk,fieldplayers);
 
-const allplyers=[...players1,...players2]
-console.log(allplyers);
+// const allplyers=[...players1,...players2]
+// console.log(allplyers);
 
-const players1Final=[...players1,'Thiago', 'Coutinho','Perisic'];
-console.log(players1Final);
+// const players1Final=[...players1,'Thiago', 'Coutinho','Perisic'];
+// console.log(players1Final);
 
-const {
-odds:{team1,x:pa,team2},
-}=game;
-console.log(team1,pa,team2);
+// const {
+// odds:{team1,x:pa,team2},
+// }=game;
+// console.log(team1,pa,team2);
 
-const printgoal=function(...players){
-  console.log(players);
-  console.log(`${players.length} goal have been scored`);
-}
+// const printgoal=function(...players){
+//   console.log(players);
+//   console.log(`${players.length} goal have been scored`);
+// }
 
-printgoal( 'Davies', 'Muller', 'Lewandowski','Kimmich');
-printgoal('Davies','Muller'); 
-printgoal(...game.scored);
+// printgoal( 'Davies', 'Muller', 'Lewandowski','Kimmich');
+// printgoal('Davies','Muller'); 
+// printgoal(...game.scored);
 
-team1<team2 && console.log('team 1 is more likely to win');
+// team1<team2 && console.log('team 1 is more likely to win');
+
+
+const meanu=[...restaurant.starterMenu,...restaurant.mainMenu];
+
+for(const item of meanu) console.log(item);
