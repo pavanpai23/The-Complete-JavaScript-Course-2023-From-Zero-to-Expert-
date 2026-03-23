@@ -109,35 +109,101 @@
 
 
 //Question 1
-const poll = {
-  question: 'What is your favourite programming language?',
-  options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
-  // This generates [0, 0, 0, 0]. More in the next section 😃
-  answers: new Array(4).fill(0),
+// const poll = {
+//   question: 'What is your favourite programming language?',
+//   options: ['0: JavaScript', '1: Python', '2: Rust', '3: C++'],
+//   // This generates [0, 0, 0, 0]. More in the next section 😃
+//   answers: new Array(4).fill(0),
 
-  registerNewAnswer(){
-    const answer=Number(prompt(`${this.question}\n${this.options.join('\n')} \n('Write option num)`),
-);
-console.log(answer);
+//   registerNewAnswer(){
+//     const answer=Number(prompt(`${this.question}\n${this.options.join('\n')} \n('Write option num)`),
+// );
+// console.log(answer);
 
-//register answer
-typeof answer==='number'&& answer<this.answers.length && this.answers[answer]++;
+// //register answer
+// typeof answer==='number'&& answer<this.answers.length && this.answers[answer]++;
 
-    this.displayresults();
-    this.displayresults('String');
-  },
+//     this.displayresults();
+//     this.displayresults('String');
+//   },
 
-displayresults(type='array'){
-    if(type==='array'){
-        console.log(this.answers);
-    }else if(type==='string'){
-        console.log(`poll result are ${this.answers.join(',')}`);
-    }
-    },
-};
+// displayresults(type='array'){
+//     if(type==='array'){
+//         console.log(this.answers);
+//     }else if(type==='string'){
+//         console.log(`poll result are ${this.answers.join(',')}`);
+//     }
+//     },
+// };
 
-// poll.registerNewAnswer();
+// // poll.registerNewAnswer();
 
-document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
+// document.querySelector('.poll').addEventListener('click',poll.registerNewAnswer.bind(poll));
 
-poll.displayresults.call({answer:[5,3,4]},'string');
+// poll.displayresults.call({answer:[5,3,4]},'string');
+
+// const runover=function(){
+//     console.log("hi i am pavan");
+// }
+// runover();
+
+// //itfe
+// (function(){
+//     console.log('hi i am pavan');
+    
+// })();
+
+// (()=>console.log('this will also never run again'))();
+
+
+// let f;
+// const g=function(){
+//     const a=23;
+//     f=function(){
+//         console.log(a*2);
+        
+//     };
+// };
+
+// const h=function(){
+//     const b=777;
+//     f=function(){
+//         console.log(b*2);
+        
+//     };
+// };
+
+// g();
+// f();
+// console.dir(f);
+
+// //reassinging
+// h();
+// f();
+// console.dir(f);
+
+
+// //ex 2
+// const BoardPassenger=function(n,wait){
+
+//     const pergroup=n/3;
+//     setTimeout(function(){
+//         console.log(`weare boarding all ${n} passengers`);
+//         console.log(`there are 3 gropus each with ${pergroup} passnegers`);
+//     },wait*1000);
+
+//     console.log(`will start boading in ${wait} seconds`);
+    
+// };
+
+// BoardPassenger(180,3); 
+
+//challenge 2
+(function () {
+  const header = document.querySelector('h1');
+  header.style.color = 'red';
+
+  document.querySelector('body').addEventListener('click',function(){
+    header.style.color='blue';
+  })
+})();
