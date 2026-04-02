@@ -191,11 +191,18 @@ displayMovements(account1.movements);
 // })
 
 // console.log(movements);
-// console.log(movement);
+// // console.log(movement);
 
 
-const user='Jonas Pavan Pai';
-const username=user.toLowerCase().split(' ').map(function(name){
-  return name[0];
+// const user='Jonas Pavan Pai';
+// const username=user.toLowerCase().split(' ').map(function(name){
+//   return name[0];
+// });
+// console.log(username);
+
+
+//filter
+const deposite=movements.filter(function(mov){
+  return mov>0;
 });
-console.log(username);
+console.log(movements);
