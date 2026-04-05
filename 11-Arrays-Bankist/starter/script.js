@@ -69,7 +69,11 @@ const calcDisplayBalance=function(movements){
 calcDisplayBalance(account1.movements);
 
 
-
+const calcdisplaysummary=function(movements){
+  const income=movements.filter(mov=>mov>0).reduce((acc,mov)=>acc+mov,0);
+  labelSumIn.textContent=`${income}`
+};
+calcDisplayBalance(account1.movements);
 
 
 
@@ -232,23 +236,48 @@ displayMovements(account1.movements);
 // console.log(withdrawals);
 
 //accumalator  is as snownball
-const balance=movements.reduce(function(acc,cur,i,arr){
-  console.log(`iteration ${i} : ${acc}`);
-  return acc+cur;
-},0);
-console.log(balance);
+// const balance=movements.reduce(function(acc,cur,i,arr){
+//   console.log(`iteration ${i} : ${acc}`);
+//   return acc+cur;
+// },0);
+// console.log(balance);
 
 
-let balance2=0;
-for(const mov of movements) balance2+=mov;
-console.log(balance2);
+// let balance2=0;
+// for(const mov of movements) balance2+=mov;
+// console.log(balance2);
 
 
-const max=movements.reduce((acc,mov)=>{
-  if(acc>mov){
-return acc;
-  }else{
-return mov;
-  }
-},movements[0]);
-console.log(max);
+// const max=movements.reduce((acc,mov)=>{
+//   if(acc>mov){
+// return acc;
+//   }else{
+// return mov;
+//   }
+// },movements[0]);
+// console.log(max);
+
+
+//challenge
+
+// const calcAverageHumanage=function(ages){
+//   const humanages=ages.map(age=>age<=2 ?2 *age : 16+age*4);
+
+//   const adults=humanages.filter(age=>age>=18);
+//   console.log(humanages);
+//   console.log(adults);
+
+//   const avg=adults.reduce((acc,age)=>acc+age,0)/adults.length;
+
+//   return avg;
+// };
+// const avg1=calcAverageHumanage([5,2,4,1,15,8,3]);
+// const avg2=calcAverageHumanage([16,6,10,5,6,1,4]);
+
+// console.log(avg1);
+// console.log(avg2);
+
+
+const eurtoUsd=1.1;
+const totalDEposite=movements.filter(mov=>mov>0).map(mov=>mov*eurtoUsd).reduce((acc,mov)=>acc+mov ,0);
+console.log(totalDEposite);
