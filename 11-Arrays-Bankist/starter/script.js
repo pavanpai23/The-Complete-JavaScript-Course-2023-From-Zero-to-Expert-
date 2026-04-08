@@ -290,23 +290,35 @@ displayMovements(account1.movements);
 // challenge 3
 
 
-const calcAverageHumanage=function(ages){
-  const humanages=ages.map(age=>age<=2 ?2 *age : 16+age*4);
+// const calcAverageHumanage=function(ages){
+//   const humanages=ages.map(age=>age<=2 ?2 *age : 16+age*4);
 
-  const adults=humanages.filter(age=>age>=18);
+//   const adults=humanages.filter(age=>age>=18);
 
-  const avg=adults.reduce((acc,age)=>acc+age,0)/adults.length;
+//   const avg=adults.reduce((acc,age)=>acc+age,0)/adults.length;
 
-  return avg;
-};
-
-
-const calcAverageHumanage2=ages=>ages.map(age=>age<=2 ?2 *age : 16+age*4).filter(age=>age>=18).reduce((acc,age,i,arr)=>acc+age/arr.length,0);
+//   return avg;
+// };
 
 
+// const calcAverageHumanage2=ages=>ages.map(age=>age<=2 ?2 *age : 16+age*4).filter(age=>age>=18).reduce((acc,age,i,arr)=>acc+age/arr.length,0);
 
-const avg1=calcAverageHumanage([5,2,4,1,15,8,3]);
-const avg2=calcAverageHumanage([16,6,10,5,6,1,4]);
 
-console.log(avg1);
-console.log(avg2);
+
+// const avg1=calcAverageHumanage([5,2,4,1,15,8,3]);
+// const avg2=calcAverageHumanage([16,6,10,5,6,1,4]);
+
+// console.log(avg1);
+// console.log(avg2);
+
+
+//find
+const withdrawal=movements.find(mov=>mov<0);
+console.log(movements);
+console.log(withdrawal);
+
+console.log(accounts);
+
+const account=accounts.find(acc=>acc.owner==='Jessica Davis');
+console.log(account);
+
